@@ -26,7 +26,13 @@
  * }
  */
 
-// ...
+const yelling = incoming => {
+  const returnArray = []
+  for (let i = 0; i < incoming.length; i++) {
+    returnArray.push(incoming[i].toUpperCase())
+  }
+  return returnArray
+}
 
 /**
  *
@@ -35,7 +41,13 @@
  * the numbers multiplied by 2
  */
 
-// ...
+const doubleTrouble = incoming => {
+  const returnArray = []
+  for (let i = 0; i < incoming.length; i++) {
+    returnArray.push(incoming[i] * 2)
+  }
+  return returnArray
+}
 
 /*
  * 3) Define a function stringyIndexes() that takes an array of
@@ -43,22 +55,48 @@
  * suffixed with " is at index X" where X is the index of the element
  */
 
-// ...
+const stringyIndexes = incoming => {
+  const returnArray = []
+  for (var i = 0; i < incoming.length; i++) {
+    returnArray.push(incoming[i] + ' is at index ' + i)
+  }
+  return returnArray
+}
 
 /*
  * 4) Define a function onlyTheEvenSurvive that accepts an array of
  * numbers and returns only the elements that are even
  */
 
-// ...
+const onlyTheEvenSurvive = incoming => {
+  const returnArray = []
+  for (var i = 0; i < incoming.length; i++) {
+    // determine if array part is even
+    if (incoming[i] % 2 == 0) {
+      returnArray.push(incoming[i])
+    }
+    //  if so then add to the new array
+    // else nothing
+  }
+  return returnArray
+}
 
 /*
  * 5) Define a function onlyTheEvenIndexedSurvive that accepts an array of
  * numbers and returns only the elements at indexes that are even
  */
 
-// ...
-
+const onlyTheEvenIndexedSurvive = incoming => {
+  const returnArray = []
+  for (var i = 0; i < incoming.length; i++) {
+    if (i % 2 == 0) {
+      returnArray.push(incoming[i])
+    }
+    //  if so then add to the new array
+    // else nothing
+  }
+  return returnArray
+}
 /*
  * 6)  Define a function bestMoviesOfTheYear that accepts an array of
  * movie objects AND a year and returns the names of movies that are
@@ -73,7 +111,20 @@
  * }
  */
 
-// ...
+const bestMoviesOfTheYear = (incoming, year) => {
+  const returnArray = []
+  for (var i = 0; i < incoming.length; i++) {
+    // const currRecord = incoming[i]
+    // console.
+    // if (currRecord[2] > 90 && currRecord[1] === year) {
+    // returnArray.push(currRecord[0])
+    // }
+    if (incoming[i].score > 90 && incoming[i].year == year) {
+      returnArray.push(incoming[i].name)
+    }
+  }
+  return returnArray
+}
 
 /*
  * 7) Define a function everyoneIsOdd that accepts an array of
@@ -81,7 +132,16 @@
  * odd.
  */
 
-// ...
+const everyoneIsOdd = incoming => {
+  var returnResult = true
+  for (var i = 0; i < incoming.length; i++) {
+    if (incoming[i] % 2 == 0) {
+      returnResult = false
+    }
+  }
+
+  return returnResult
+}
 
 /*
  * 8) Define a function findTheNeedle that accepts an array of
@@ -89,7 +149,14 @@
  * `needle` inside
  */
 
-// ...
+const findTheNeedle = incoming => {
+  for (var i = 0; i < incoming.length; i++) {
+    var n = incoming[i].indexOf('needle')
+    if (n > 0) {
+      return incoming[i]
+    }
+  }
+}
 
 /*
  * 9) Define a function findTheNeedleIndex that accepts an array of
@@ -97,7 +164,14 @@
  *  the word `needle` inside
  */
 
-// ...
+const findTheNeedleIndex = incoming => {
+  for (var i = 0; i < incoming.length; i++) {
+    var n = incoming[i].indexOf('needle')
+    if (n > 0) {
+      return i
+    }
+  }
+}
 
 /*
  *` 10)  Define a function someoneToLove that accepts an array of
@@ -105,7 +179,15 @@
  * four characters long
  */
 
-// ...
+const someoneToLove = incoming => {
+  var hasFour = false
+  for (var i = 0; i < incoming.length; i++) {
+    if (incoming[i].length === 4) {
+      hasFour = true
+    }
+  }
+  return hasFour
+}
 
 /*
  * 11) Define a function mapYourself that accepts an array of
@@ -116,7 +198,16 @@
  * So no using forEach, map, filter, reduce, etc.
  */
 
-// ...
+const mapYourself = incoming => {
+  var i = 0
+  var returnArray = []
+  while (i < incoming.length) {
+    returnArray.push(incoming[i] * 2)
+    // console.log([i, incoming.length])
+    i++
+  }
+  return returnArray
+}
 
 /*
  * 12) Define a function filterYourself that accepts an
@@ -128,7 +219,7 @@
  * So no using forEach, map, filter, reduce, etc.
  */
 
-// ...
+const filterYourself = () => {}
 
 /*
  * 13) Define a function everyYourself that accepts an
